@@ -67,13 +67,6 @@ class Golongan(models.Model):
     class Meta:
         db_table = 'golongan'
 
-class MataKuliah(models.Model):
-    nama = models.CharField(max_length=100,null=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
-    class Meta:
-        db_table = 'mata_kuliah'
-
 class Semester(Enum):
 
     SATU = 1
@@ -88,6 +81,14 @@ class Semester(Enum):
     @classmethod
     def choices(cls):
         return tuple((i.name, i.value) for i in cls)
+
+class MataKuliah(models.Model):
+    nama = models.CharField(max_length=100,null=True)
+    semester = models.SmallIntegerField(null=True, choices=Semester.choices(),default=Semester.SATU)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
+    class Meta:
+        db_table = 'mata_kuliah'
 
 class LearningJurnal(models.Model):
     email = models.CharField(max_length=100,null=True)
@@ -104,3 +105,13 @@ class LearningJurnal(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
     class Meta:
         db_table = 'learning_jurnal'
+
+class JurnalSimilarity(models.Model):
+    doc1 = models.ForeignKey(LearningJurnal, on_delete=models.CASCADE, null=True,related_name="fn_lj_doc1")
+    doc2 = models.ForeignKey(LearningJurnal, on_delete=models.CASCADE, null=True,related_name="fn_lj_doc2")
+    score = models.FloatField(null=True)
+    score_percentage = models.IntegerField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
+    class Meta:
+        db_table = 'jurnal_similarity'

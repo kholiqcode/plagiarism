@@ -1,20 +1,22 @@
-{% extends "app.html" %}
-{% load static %}
-{% block content %}
+{% extends "app.html" %} {% load static %} {% block content %}
 <!-- Main Content -->
-    <div id="content">
-        <div class="topbar-divider d-none d-sm-block"></div>
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow">
+<div id="content">
+  <div class="topbar-divider d-none d-sm-block"></div>
+  <!-- Topbar -->
+  <nav
+    class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow"
+  >
+    <!-- Sidebar Toggle (Topbar) -->
+    <button
+      id="sidebarToggleTop"
+      class="btn btn-link d-md-none rounded-circle mr-3"
+    >
+      <i class="fa fa-bars"></i>
+    </button>
 
-            <!-- Sidebar Toggle (Topbar) -->
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Topbar Search -->
-            <h3 style="font-weight: 700; color: black;">Mata Kuliah</h3>
-            <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <!-- Topbar Search -->
+    <h3 style="font-weight: 700; color: black">Mata Kuliah</h3>
+    <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -25,415 +27,293 @@
                 </div>
             </form> -->
 
-            <!-- Topbar Navbar -->
-            <ul class="navbar-nav ml-auto">
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+      <li class="nav-item dropdown no-arrow d-sm-none">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="searchDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fas fa-search fa-fw"></i>
+        </a>
+        <!-- Dropdown - Messages -->
+        <div
+          class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+          aria-labelledby="searchDropdown"
+        >
+          <form class="form-inline mr-auto w-100 navbar-search">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control bg-light border-0 small"
+                placeholder="Search for..."
+                aria-label="Search"
+                aria-describedby="basic-addon2"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
 
-                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                <li class="nav-item dropdown no-arrow d-sm-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-search fa-fw"></i>
-                    </a>
-                    <!-- Dropdown - Messages -->
-                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                        <form class="form-inline mr-auto w-100 navbar-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
+      <!-- <div class="topbar-divider d-none d-sm-block" style="color: black"></div> -->
 
-
-
-                <!-- <div class="topbar-divider d-none d-sm-block" style="color: black"></div> -->
-
-                <!-- Nav Item - User Information -->
-                <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline" style="color: black;">Hallo, Admin</span>
-                        <img class=" rounded-circle" src="{% static 'assets/img/undraw_posting_photo.svg' %}" width="40px" height="40px">
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-        <!-- End of Topbar --><!-- Begin Page Content -->
-<div class="container-fluid">
-
+      <!-- Nav Item - User Information -->
+      <li class="nav-item dropdown no-arrow">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="userDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="mr-2 d-none d-lg-inline" style="color: black"
+            >Hallo, Admin</span
+          >
+          <img
+            class="rounded-circle"
+            src="{% static 'assets/img/undraw_posting_photo.svg' %}"
+            width="40px"
+            height="40px"
+          />
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End of Topbar --><!-- Begin Page Content -->
+  <div class="container-fluid">
     <!-- Page Heading -->
     <!-- <h1 class="h3 mb-2 text-gray-800">Mata Kuliah</h1>
-    <p class="mb-4">Data Mata Kuliah Tugas Learning Journal Mahasiswa Politeknik Negeri Jember Jurusan Teknologi Informasi Prodi Teknik Informatika.</p>
-    -->
-    <div style="padding-bottom: 10px;">
-        <a style="background-color: #0B0641;" href="#" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#myModal">
-            <span class="fa fa-plus">
-            </span>
-            <span class="text">
-                Tambah Mata Kuliah
-            </span>
-        </a>
+        <p class="mb-4">Data Mata Kuliah Tugas Learning Journal Mahasiswa Politeknik Negeri Jember Jurusan Teknologi Informasi Prodi Teknik Informatika.</p>
+        -->
+    <div style="padding-bottom: 10px">
+      <a
+        style="background-color: #0b0641"
+        href="#"
+        class="btn btn-primary btn-flat"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        <span class="fa fa-plus"> </span>
+        <span class="text"> Tambah Mata Kuliah </span>
+      </a>
     </div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Total Mata Kuliah : 5 Data</h6>
-            <div class="d-grid gap-5 d-md-flex justify-content-md-end">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Total Mata Kuliah : {{ matkul|length }} Data
+        </h6>
+        <div class="d-grid gap-5 d-md-flex justify-content-md-end"></div>
+      </div>
 
-            </div>
+      <div class="card-body">
+        <!--   -->
+        <!--  -->
+        <div class="table-responsive">
+          <table
+            class="table table-bordered"
+            id="dataTable"
+            width="100%"
+            cellspacing="0"
+          >
+            <thead>
+              <tr>
+                <th>Id Mata Kuliah</th>
+                <th>Mata Kuliah</th>
+                <th>Semester</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for value in matkul %}
+              <tr>
+                <td>{{value.id}}</td>
+                <td>{{value.nama}}</td>
+                <td>{{value.semester}}</td>
+                <td>
+                  <a
+                    type="submit"
+                    class="btn btn-info btn-icon-split"
+                    data-toggle="modal"
+                    data-target="#ModalEditMK002"
+                  >
+                    <span class="icon text-white-50">
+                      <i class="fas fa-pen"></i>
+                    </span>
+                    <span class="text">Edit</span>
+                  </a>
+
+                  <a
+                    class="btn btn-danger btn-icon-split"
+                    href="#"
+                    onclick="konfirmasi_modal('{% url 'matkul_delete' id=value.id %}')"
+                    data-toggle="modal"
+                    data-target="#ModalHapus"
+                  >
+                    <span class="icon text-white-50">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Hapus</span>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-
-
-        <div class="card-body">
-            <!--   -->
-            <!--  -->
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Id Mata Kuliah</th>
-                            <th>Mata Kuliah</th>
-                            <th>Semester</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                                                    <tr>
-                                <td> MK002</td>
-                                <td> Basis Data</td>
-                                <td> 4</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK002">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK002')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK003</td>
-                                <td> fgfdgdf</td>
-                                <td> 3</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK003">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK003')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK004</td>
-                                <td> fdfsdf</td>
-                                <td> 6</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK004">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK004')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK005</td>
-                                <td> hfdhg</td>
-                                <td> 4</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK005">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK005')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK006</td>
-                                <td> gaby</td>
-                                <td> 6</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK006">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK006')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK007</td>
-                                <td> afsaf</td>
-                                <td> 6</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK007">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK007')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK008</td>
-                                <td> asas</td>
-                                <td> 2</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK008">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK008')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK009</td>
-                                <td> safdafsd</td>
-                                <td> 4</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK009">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK009')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK010</td>
-                                <td> trergf</td>
-                                <td> 4</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK010">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK010')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK011</td>
-                                <td> jvghg</td>
-                                <td> 2</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK011">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK011')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK012</td>
-                                <td> Agroinformatika</td>
-                                <td> 6</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK012">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK012')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                                    <tr>
-                                <td> MK013</td>
-                                <td> Matematika Diskrit</td>
-                                <td> 1</td>
-                                <td>
-                                    <a type="submit" class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#ModalEditMK013">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-pen"></i>
-                                        </span>
-                                        <span class="text">Edit</span>
-                                    </a>
-
-                                    <a class="btn btn-danger btn-icon-split" href="" onclick="konfirmasi_modal('/MataKuliah/delete_matkul/MK013')" data-toggle="modal" data-target="#ModalHapus">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
-                            </tr>
-                                            </tbody>
-                </table>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- Pop-Up Tambah Mata Kuliah -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                <h4 class="modal-title" id="myModalLabel">Detail Deteksi  Plagiarism</h4> -->
-                    <h4 class="m-0 font-weight-bold text-primary">Tambah Mata Kuliah</h4>
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                    <h4 class="modal-title" id="myModalLabel">Detail Deteksi  Plagiarism</h4> -->
+            <h4 class="m-0 font-weight-bold text-primary">
+              Tambah Mata Kuliah
+            </h4>
+          </div>
+          <form class="form-horizontal" action="" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="inputUserName" class="col-sm-8 control-label"
+                  >Mata Kuliah</label
+                >
+                <div class="col-sm-12">
+                  <input
+                    required
+                    oninvalid="this.setCustomValidity('Field Tidak Boleh Kosong')"
+                    oninput="setCustomValidity('')"
+                    type="text"
+                    name="matkul"
+                    class="form-control"
+                    placeholder="Masukkan Mata Kuliah"
+                  />
                 </div>
-                <form class="form-horizontal" action="#" method="post">
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Id Mata Kuliah</label>
-                            <div class="col-sm-12">
-                                <input type="text" name="id" class="form-control" id="inputUserName" placeholder="Masukkan Id Mata Kuliah" value="MK014" readonly>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-8 control-label">Mata Kuliah</label>
-                            <div class="col-sm-12">
-                                <input required oninvalid="this.setCustomValidity('Field Tidak Boleh Kosong')" oninput="setCustomValidity('')" type="text" name="matkul" class="form-control" placeholder="Masukkan Mata Kuliah">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Semester</label>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <div>
-                                        <select required oninvalid="this.setCustomValidity('Field Tidak Boleh Kosong')" oninput="setCustomValidity('')" class="form-control" name="semester">
-                                            <option value="" selected disabled>Pilih Semester</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              </div>
+              <div class="form-group">
+                <label for="inputUserName" class="col-sm-4 control-label"
+                  >Semester</label
+                >
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <div>
+                      <select
+                        required
+                        oninvalid="this.setCustomValidity('Field Tidak Boleh Kosong')"
+                        oninput="setCustomValidity('')"
+                        class="form-control"
+                        name="semester"
+                      >
+                        <option value="" selected disabled>
+                          Pilih Semester
+                        </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark btn-flat" data-dismiss="modal">Kembali</button>
-                        <button type="submit" class="btn btn-primary btn-flat">Tambah</button>
-                    </div>
-                </form>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-dark btn-flat"
+                data-dismiss="modal"
+              >
+                Kembali
+              </button>
+              <button type="submit" class="btn btn-primary btn-flat">
+                Tambah
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
     <!-- End of Pop-Up Tambah Mata Kuliah -->
 
-
     <!-- Pop-Up Hapus Mata Kuliah -->
-    <div class="modal fade" id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="m-0 font-weight-bold text-primary">Hapus Mata Kuliah</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Apakah Anda yakin mau menghapus data Mata Kuliah?<b></b> ?</p>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-dark btn-flat" data-dismiss="modal">Kembali</button>
-                    <!-- <a class="btn btn-primary btn-flat" type="button" id="delete_link" href="">Hapus</a> -->
-                    <a type="button" class="btn btn-primary btn-flat" id="delete_link" href="">Hapus</a>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="ModalHapus"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="m-0 font-weight-bold text-primary">Hapus Mata Kuliah</h4>
+          </div>
+          <div class="modal-body">
+            <p>Apakah Anda yakin mau menghapus data Mata Kuliah?<b></b> ?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-dark btn-flat"
+              data-dismiss="modal"
+            >
+              Kembali
+            </button>
+            <!-- <a class="btn btn-primary btn-flat" type="button" id="delete_link" href="">Hapus</a> -->
+            <a
+              type="button"
+              class="btn btn-primary btn-flat"
+              id="delete_link"
+              href=""
+              >Hapus</a
+            >
+          </div>
         </div>
+      </div>
     </div>
     <!-- End of Pop-Up Hapus Mata Kuliah -->
-
-</div>
-<!-- /.container-fluid -->
-
+  </div>
+  <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
-{% endblock content %}
-{% block script %}
-    <!-- Page level plugins -->
-    <script "{% static 'assets/vendor/datatables/jquery.dataTables.min.js' %}"></script>
-    <script "{% static 'assets/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+{% endblock content %} {% block script %}
+<!-- Page level plugins -->
+<script src="{% static 'assets/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script type="text/javascript">
+  function konfirmasi_modal(delete_url) {
+    console.log("delete_url");
+    $("#ModalHapus").modal("show", {
+      backdrop: "static",
+    });
+    document.getElementById("delete_link").setAttribute("href", delete_url);
+  }
+</script>
 {% endblock script %}
