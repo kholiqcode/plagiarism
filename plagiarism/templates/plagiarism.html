@@ -1,0 +1,232 @@
+{% extends "app.html" %}
+{% load static %}
+{% block content %}
+<!-- Main Content -->
+    <div id="content">
+        <div class="topbar-divider d-none d-sm-block"></div>
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow">
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <h3 style="font-weight: 700; color: black;">Deteksi Plagiarism</h3>
+            <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form> -->
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <!-- Dropdown - Messages -->
+                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+
+
+                <!-- <div class="topbar-divider d-none d-sm-block" style="color: black"></div> -->
+
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline" style="color: black;">Hallo, Admin</span>
+                        <img class=" rounded-circle" src="{% static 'assets/img/undraw_posting_photo.svg'%}" width="40px" height="40px">
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- End of Topbar --> <!-- Begin Page Content -->
+ <div class="container-fluid">
+     <!-- DataTales Example -->
+     <div class="card shadow mb-4">
+         <div class="card-header py-3">
+             <div class="d-grid gap-5 d-md-flex justify-content-md-end">
+                 <h6 style="padding-right: 150px; font-size: 20px;" class="font-weight-bold text-gray-800">Mulai Deteksi Plagiarism Learning Journal Mahasiswa</h6>
+                 <div class="form-group" style="padding-right: 10px; width: 150px">
+                     <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                         <option value="" selected disabled>Semester</option>
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="1">3</option>
+                         <option value="2">4</option>
+                         <option value="1">5</option>
+                         <option value="2">6</option>
+                         <option value="1">7</option>
+                         <option value="2">8</option>
+                     </select>
+                 </div>
+                 <div class="form-group" style="padding-right: 10px; width: 150px">
+                     <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                         <option value="" selected disabled>Mata Kuliah</option>
+                         <option value="matkul">Organisasi dan Arsitektur Komputer</option>
+                         <option value="matkul">Data Analisis</option>
+                         <option value="matkul">Perawatan Perangkat Lunak</option>
+                         <option value="matkul">Agroinformatika</option>
+                     </select>
+                 </div>
+                 <div class="form-group" style="padding-right: 10px; width: 150px">
+                     <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                         <option value="" selected disabled>Minggu Ke</option>
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="1">3</option>
+                         <option value="2">4</option>
+                         <option value="1">5</option>
+                         <option value="2">6</option>
+                         <option value="1">7</option>
+                         <option value="2">8</option>
+                         <option value="1">9</option>
+                         <option value="2">10</option>
+                         <option value="2">11</option>
+                         <option value="2">12</option>
+                         <option value="2">13</option>
+                         <option value="2">14</option>
+                         <option value="2">15</option>
+                     </select>
+                 </div>
+
+                 <!-- <button type="button" class="btn btn-primary">Filter</button> -->
+                 <div>
+                     <a style="background-color: #0B0641; width: 85px;" href="#" class="btn btn-primary btn-flat">
+                         <span class="icon text-white-50">
+                             <i class="fas fa-filter"></i>
+                         </span>
+                         <span class="text">Filter</span>
+                     </a>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- DataTales Example -->
+     <div class="card shadow mb-4">
+
+
+
+         <div class="card-body">
+             <div class="table-responsive">
+                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                     <thead>
+                         <tr>
+                             <th>No</th>
+                             <th>NIM 1</th>
+                             <th>NIM 2</th>
+                             <th>Persentase</th>
+                             <th>Aksi</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>1</td>
+                             <td>E41180697</td>
+                             <td>E41180087</td>
+                             <td>70%</td>
+                             <td>
+                                 <a href="" class="btn btn-success btn-icon-split" data-toggle="modal" data-target="#myModal">
+                                     <span class="icon text-white-50">
+                                         <i class="fas fa-info-circle"></i>
+                                     </span>
+                                     <span class="text">Lihat Detail</span>
+                                 </a>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>2</td>
+                             <td>E41180617</td>
+                             <td>E41180124</td>
+                             <td>89%</td>
+                             <td>
+                                 <a href="/DetailDeteksi" class="btn btn-success btn-icon-split">
+                                     <span class="icon text-white-50">
+                                         <i class="fas fa-info-circle"></i>
+                                     </span>
+                                     <span class="text">Lihat Detail</span>
+                                 </a>
+                             </td>
+                         </tr>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+     </div>
+     <!-- Pop-Up Detail Deteksi Plagiarism -->
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                <h4 class="modal-title" id="myModalLabel">Detail Deteksi  Plagiarism</h4> -->
+                     <h4 class="m-0 font-weight-bold text-primary">Detail Deteksi Plagiarism</h4>
+                 </div>
+                 <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                     <div class="modal-body">
+
+                         <div class="form-group">
+                             <label for="inputUserName" class="col-sm-4 control-label">NIM 1</label>
+                             <div class="col-sm-12">
+                                 <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="nim kfnkwlnf" required>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label for="inputUserName" class="col-sm-8 control-label">Learning Journal 1</label>
+                             <div class="col-sm-12">
+                                 <input type="text" name="xjabatan" class="form-control" id="inputUserName" placeholder="wfhqoinalksfnoiqwndaslkcaslncasklc" required>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label for="inputUserName" class="col-sm-4 control-label">NIM 2</label>
+                             <div class="col-sm-12">
+                                 <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="nim ajbfjasbfas" required>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label for="inputUserName" class="col-sm-8 control-label">Learning Journal 2</label>
+                             <div class="col-sm-12">
+                                 <input type="text" name="xjabatan" class="form-control" id="inputUserName" placeholder="wefjbqjfnqklfnqpwifnqw" required>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-primary btn-flat" data-dismiss="modal">Close</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+     <!-- End of Pop-Up Detail Deteksi Plagiarism -->
+ </div>
+{% endblock content %}
+{% block script %}
+    <!-- Page level plugins -->
+    <script "{% static 'assets/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+    <script "{% static 'assets/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+{% endblock script %}

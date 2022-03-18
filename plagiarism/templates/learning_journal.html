@@ -1,0 +1,209 @@
+{% extends "app.html" %}
+{% load static %}
+{% block content %}
+<!-- Main Content -->
+    <div id="content">
+        <div class="topbar-divider d-none d-sm-block"></div>
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow">
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <h3 style="font-weight: 700; color: black;">Data Learning Journal</h3>
+            <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form> -->
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <!-- Dropdown - Messages -->
+                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <!-- <div class="topbar-divider d-none d-sm-block" style="color: black"></div> -->
+
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline" style="color: black;">Hallo, Admin</span>
+                        <img class=" rounded-circle" src="{% static 'assets/img/undraw_posting_photo.svg'%}" width="40px" height="40px">
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- End of Topbar --> <!-- Begin Page Content -->
+ <div class="container-fluid">
+
+     <!-- Page Heading -->
+     <!-- <h1 style="font-weight: 700;" class="h3 mb-1 text-gray-800">Data Mahasiswa</h1>
+     <p style="font-weight: 700;" class="mb-3">Data Learning Journal Mahasiswa Politeknik Negeri Jember Jurusan Teknologi Informasi Prodi Teknik Informatika.</p> -->
+     <!-- <div style="padding-bottom: 10px;">
+         <a style="background-color: #0B0641;" href="#" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#myModal">
+             <span class="fa fa-plus">
+             </span>
+             <span class="text">
+                 Tambah Data Mahasiswa
+             </span>
+         </a>
+     </div> -->
+     <!-- DataTales Example -->
+     <div class="card shadow mb-4">
+         <div class="card-header py-3">
+             <div class="d-grid gap-5 d-md-flex justify-content-md-end">
+                 <h6 style="padding-right: 380px; font-size: 18px;" class="font-weight-bold text-primary">Total Learning Journal : 1800 Data</h6>
+                 <div class="form-group" style="padding-right: 10px; width: 150px">
+                     <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                         <option value="" selected disabled>Semester</option>
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="1">3</option>
+                         <option value="2">4</option>
+                         <option value="1">5</option>
+                         <option value="2">6</option>
+                         <option value="1">7</option>
+                         <option value="2">8</option>
+                     </select>
+                 </div>
+                 <div class="form-group" style="padding-right: 10px; width: 150px">
+                     <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                         <option value="" selected disabled>Mata Kuliah</option>
+                         <option value="matkul">Organisasi dan Arsitektur Komputer</option>
+                         <option value="matkul">Data Analisis</option>
+                         <option value="matkul">Perawatan Perangkat Lunak</option>
+                         <option value="matkul">Agroinformatika</option>
+                     </select>
+                 </div>
+                 <div class="form-group" style="padding-right: 10px; width: 150px">
+                     <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                         <option value="" selected disabled>Minggu Ke</option>
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="1">3</option>
+                         <option value="2">4</option>
+                         <option value="1">5</option>
+                         <option value="2">6</option>
+                         <option value="1">7</option>
+                         <option value="2">8</option>
+                         <option value="1">9</option>
+                         <option value="2">10</option>
+                         <option value="2">11</option>
+                         <option value="2">12</option>
+                         <option value="2">13</option>
+                         <option value="2">14</option>
+                         <option value="2">15</option>
+                     </select>
+                 </div>
+
+                 <!-- <button type="button" class="btn btn-primary">Filter</button> -->
+                 <div>
+                     <a style="background-color: #0B0641;" href="#" class="btn btn-primary btn-flat">
+                         <span class="icon text-white-50">
+                             <i class="fas fa-filter"></i>
+                         </span>
+                         <span class="text">Filter</span>
+                     </a>
+                 </div>
+             </div>
+         </div>
+
+
+         <div class="card-body">
+             <div class="table-responsive">
+                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                     <thead>
+                         <tr>
+                             <!-- <th>Timestamp</th> -->
+                             <th>No</th>
+                             <th>Nama</th>
+                             <th>NIM</th>
+                             <th>Gol</th>
+                             <th>Semester</th>
+                             <th>Mata Kuliah</th>
+                             <th>Minggu ke-</th>
+                             <th>Tanggal</th>
+                             <!-- <th>Topik</th> -->
+                             <th>Aksi</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                                                      <tr>
+                                 <td> 1</td>
+                                 <td> Gabriela Caroline Runturambi</td>
+                                 <td> E41180617</td>
+                                 <td> A</td>
+                                 <td> 3</td>
+                                 <td> fgfdgdf</td>
+                                 <td> 2</td>
+                                 <td> 2022-01-03</td>
+                                 <td>
+                                     <a style="width: max-content;" href="/DataJournal/Detail/1" class="btn btn-success btn-icon-split">
+                                         <span class="icon text-white-50">
+                                             <i class="fas fa-info-circle"></i>
+                                         </span>
+                                         <span class="text">Lihat Detail</span>
+                                     </a>
+                                 </td>
+                             </tr>
+                                                      <tr>
+                                 <td> 2</td>
+                                 <td> Nevarida</td>
+                                 <td> E41180111</td>
+                                 <td> A</td>
+                                 <td> 3</td>
+                                 <td> fgfdgdf</td>
+                                 <td> 1</td>
+                                 <td> 2022-01-01</td>
+                                 <td>
+                                     <a style="width: max-content;" href="/DataJournal/Detail/2" class="btn btn-success btn-icon-split">
+                                         <span class="icon text-white-50">
+                                             <i class="fas fa-info-circle"></i>
+                                         </span>
+                                         <span class="text">Lihat Detail</span>
+                                     </a>
+                                 </td>
+                             </tr>
+                                              </tbody>
+                 </table>
+             </div>
+         </div>
+     </div>
+
+ </div>
+ <!-- /.container-fluid -->
+
+ </div>
+ <!-- End of Main Content -->
+{% endblock content %}
+{% block script %}
+    <!-- Page level plugins -->
+    <script "{% static 'assets/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+    <script "{% static 'assets/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+{% endblock script %}

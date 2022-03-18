@@ -1,0 +1,335 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style type="text/css">
+      .bg-customm {
+        background-color: #0b0641;
+      }
+    </style>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Plagiarism Checker - Learning Journal</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+      href="{% static 'assets/vendor/fontawesome-free/css/all.min.css'%}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'assets/css/sb-admin-2.min.css'%}" rel="stylesheet" />
+    <link href="{% static 'assets/css/custom.css'%}" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- MultiStep Form -->
+    <div class="container-fluid" id="grad1">
+      <div class="row justify-content-center mt-0">
+        <div
+          class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2"
+        >
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <div class="text-center">
+              <h1 style="color: #0b0641; font-weight: 800" class="mb-4">
+                LEARNING JOURNAL TEKNIK INFORMATIKA
+              </h1>
+            </div>
+            <h5
+              style="
+                color: #0b0641;
+                font-weight: 700;
+                margin-left: 35px;
+                text-align: left;
+              "
+            >
+              Petunjuk
+            </h5>
+            <ul
+              type="disc"
+              style="
+                margin-left: 50px;
+                margin-right: 50px;
+                color: #616161;
+                text-align: left;
+              "
+            >
+              <li>
+                Isi dengan informasi identitas, matakuliah, dan apa yang sudah
+                anda pelajari saat selesai mengikuti perkuliahan di setiap
+                minggunya. (maksimal 250 kata)
+              </li>
+              <li>Ketika mengisi akan dianggap hadir dalam perkuliahan</li>
+              <li>
+                Hanya diperbolehkan mengisi saat hari perkuliahan yang sama
+              </li>
+              <li>
+                Data yang didapat akan coba diteliti kemiripannya (similarity),
+                jadi jangan copy-paste milik teman
+              </li>
+            </ul>
+            <!-- <h2><strong>Learning Journal Teknik Informatika</strong></h2>
+                    <p>Petunjuk</p> -->
+            <div class="row">
+              <div class="col-md-12 mx-0">
+                <form id="msform">
+                  <!-- progressbar -->
+                  <ul id="progressbar">
+                    <li class="active" id="account">
+                      <strong>Identitas</strong>
+                    </li>
+                    <li id="personal"><strong>Learning Journal</strong></li>
+                    <li id="confirm"><strong>Selesai</strong></li>
+                  </ul>
+                  <!-- fieldsets -->
+                  <fieldset>
+                    <div class="form-card">
+                      <h2 class="fs-title">Identitas Mahasiswa</h2>
+                      <br />
+                      <label for="">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Masukkan Email"
+                      />
+                      <label for="">Nama</label>
+                      <input
+                        type="text"
+                        name="nama"
+                        placeholder="Masukkan Nama"
+                      />
+                      <label for="">NIM</label>
+                      <input
+                        type="text"
+                        name="nim"
+                        placeholder="Masukkan Nim"
+                      />
+                      <label for="">Golongan</label>
+                      <div>
+                        <select class="form-control" name="gol" id="gol">
+                          <option value="" selected disabled>
+                            Pilih Golongan
+                          </option>
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+                          <option value="E">E</option>
+                          <option value="BWS">BWS</option>
+                        </select>
+                      </div>
+                      <br />
+                      <label for="">Semester</label>
+                      <div>
+                        <select
+                          class="form-control"
+                          name="semester"
+                          id="semester"
+                        >
+                          <option value="" selected disabled>
+                            Pilih Semester
+                          </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                        </select>
+                      </div>
+                    </div>
+                    <input
+                      type="button"
+                      name="next"
+                      class="next action-button"
+                      value="Next Step"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <div class="form-card">
+                      <h2 class="fs-title">Mata Kuliah</h2>
+                      <br />
+                      <label for="">Mata Kuliah</label>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="exampleRadios"
+                              id="exampleRadios1"
+                              value="option1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="exampleRadios1"
+                            >
+                              Workshop Pengembangan Perangkat Lunak
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="exampleRadios"
+                              id="exampleRadios1"
+                              value="option1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="exampleRadios1"
+                            >
+                              Workshop Pengembangan Perangkat Lunak
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="exampleRadios"
+                              id="exampleRadios1"
+                              value="option1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="exampleRadios1"
+                            >
+                              Workshop Pengembangan Perangkat Lunak
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <label for="">Minggu ke-</label>
+                      <div>
+                        <select
+                          class="form-control"
+                          name="semester"
+                          id="semester"
+                        >
+                          <option value="" selected disabled>
+                            Pilih Pertemuan
+                          </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                        </select>
+                      </div>
+                      <br />
+                      <label for="">Tanggal</label>
+                      <input
+                        type="date"
+                        name="tanggal"
+                        placeholder="Masukkan Tanggal"
+                      />
+                    </div>
+                    <div class="form-card">
+                      <h2 class="fs-title">Learning Journal</h2>
+                      <br />
+                      <label for="">Topik</label>
+                      <input
+                        type="text"
+                        name="topik"
+                        placeholder="Masukkan Topik"
+                      />
+                      <label for="">Learning Journal</label>
+                      <!-- <input type="text-area" name="journal" placeholder="Masukkan Learning Journal" /> -->
+                      <textarea
+                        style="border: 1px solid; border-color: #d3d3d3"
+                        rows="10"
+                        placeholder="Masukkan Learning Journal"
+                      ></textarea>
+                    </div>
+                    <input
+                      type="button"
+                      name="previous"
+                      class="previous action-button-previous"
+                      value="Previous"
+                    />
+                    <input
+                      type="button"
+                      name="next"
+                      class="next action-button"
+                      value="Next Step"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <div class="form-card">
+                      <h2 class="fs-title text-center">Sukses !</h2>
+                      <br /><br />
+                      <div class="row justify-content-center">
+                        <div class="col-3">
+                          <img
+                            src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                            class="fit-image"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="row justify-content-center">
+                        <div class="col-7 text-center">
+                          <h5>Data Berhasil di Submit</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'assets/vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'assets/js/sb-admin-2.min.js'%}"></script>
+    <!-- Page Specific JS File -->
+
+    <!-- Page level plugins -->
+    <script src="{% static 'assets/vendor/datatables/jquery.dataTables.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/datatables/dataTables.bootstrap4.min.js'%}"></script>
+
+    <script src="{% static 'assets/js/custom.js'%}"></script>
+  </body>
+</html>

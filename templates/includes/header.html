@@ -1,0 +1,40 @@
+{% block content %} {% load static %}
+<header
+  class="bg-customm"
+  style="
+    height: 100px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+  "
+>
+  <div>
+    <img
+      style="float: left"
+      src="{% static 'assets/img/polije.png'%}"
+      width="70"
+      height="70"
+    />
+    <img
+      style="float: right"
+      src="{% static 'assets/img/logopolije.png' %}"
+      width="70"
+      height="70"
+    />
+    <div style="text-align: center">
+      <h3 style="font-weight: 700; font-family: Source Sans Pro; color: white">
+        PLAGIARISM CHECKER OF LEARNING JOURNAL
+      </h3>
+      <h5 style="font-weight: 500; font-family: Source Sans Pro; color: white">
+        JURUSAN TEKNOLOGI INFORMASI PRODI TEKNIK INFORMATIKA
+      </h5>
+    </div>
+  </div>
+  <!-- <div style="font-family: Roboto; float:right; margin-top:-63px; color:white;">
+            <h1 style="font-size: 36px; font-weight: 800;">PLAGIARISM CHECKER</h1>
+            <span style="font-size: 24px; font-weight: 700; margin-top: -15px; float: right;">Teknik Informatika</span>
+        </div> -->
+</header>
+<header style="background-color: white; height: 5px"></header>
+{% endblock content %}
