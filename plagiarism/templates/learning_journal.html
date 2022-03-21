@@ -78,7 +78,7 @@
      <div class="card shadow mb-4">
          <div class="card-header py-3">
              <div class="d-grid gap-5 d-md-flex justify-content-md-end">
-                 <h6 style="padding-right: 380px; font-size: 18px;" class="font-weight-bold text-primary">Total Learning Journal : 1800 Data</h6>
+                 <h6 style="padding-right: 380px; font-size: 18px;" class="font-weight-bold text-primary">Total Learning Journal : {{journal|length}} Data</h6>
                  <div class="form-group" style="padding-right: 10px; width: 150px">
                      <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
                          <option value="" selected disabled>Semester</option>
@@ -154,17 +154,18 @@
                          </tr>
                      </thead>
                      <tbody>
+                             {% for item in journal%}
                                                       <tr>
-                                 <td> 1</td>
-                                 <td> Gabriela Caroline Runturambi</td>
-                                 <td> E41180617</td>
-                                 <td> A</td>
-                                 <td> 3</td>
-                                 <td> fgfdgdf</td>
-                                 <td> 2</td>
-                                 <td> 2022-01-03</td>
+                                 <td> {{item.id}}</td>
+                                 <td> {{item.nama}}</td>
+                                 <td> {{item.nim}}</td>
+                                 <td> {{item.golongan}}</td>
+                                 <td> {{item.semester}}</td>
+                                 <td> {{item.matkul.nama}}</td>
+                                 <td> {{item.minggu}}</td>
+                                 <td> {{item.tanggal_perkuliahan}}</td>
                                  <td>
-                                     <a style="width: max-content;" href="/DataJournal/Detail/1" class="btn btn-success btn-icon-split">
+                                     <a style="width: max-content;" href="{% url 'detail_journal' id=item.id %}" class="btn btn-success btn-icon-split">
                                          <span class="icon text-white-50">
                                              <i class="fas fa-info-circle"></i>
                                          </span>
@@ -172,24 +173,7 @@
                                      </a>
                                  </td>
                              </tr>
-                                                      <tr>
-                                 <td> 2</td>
-                                 <td> Nevarida</td>
-                                 <td> E41180111</td>
-                                 <td> A</td>
-                                 <td> 3</td>
-                                 <td> fgfdgdf</td>
-                                 <td> 1</td>
-                                 <td> 2022-01-01</td>
-                                 <td>
-                                     <a style="width: max-content;" href="/DataJournal/Detail/2" class="btn btn-success btn-icon-split">
-                                         <span class="icon text-white-50">
-                                             <i class="fas fa-info-circle"></i>
-                                         </span>
-                                         <span class="text">Lihat Detail</span>
-                                     </a>
-                                 </td>
-                             </tr>
+                             {% endfor %}
                                               </tbody>
                  </table>
              </div>

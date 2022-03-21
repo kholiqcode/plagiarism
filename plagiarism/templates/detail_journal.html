@@ -1,0 +1,159 @@
+{% extends "app.html" %}
+{% load static %}
+{% block content %}
+<!-- Main Content -->
+    <div id="content">
+        <div class="topbar-divider d-none d-sm-block"></div>
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow">
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <h3 style="font-weight: 700; color: black;">Data Learning Journal</h3>
+            <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form> -->
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <!-- Dropdown - Messages -->
+                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+
+
+                <!-- <div class="topbar-divider d-none d-sm-block" style="color: black"></div> -->
+
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline" style="color: black;">Hallo, Admin</span>
+                        <img class=" rounded-circle" src="assets/img/undraw_posting_photo.svg" width="40px" height="40px">
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- End of Topbar --><!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Detail </h6>
+        </div> -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>Timestamp</td>
+                            <td>{{journal.created_at}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{journal.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Nama</td>
+                            <td>{{journal.nama}}</td>
+                        </tr>
+                        <tr>
+                            <td>NIM</td>
+                            <td>{{journal.nim}}</td>
+                        </tr>
+                        <tr>
+                            <td>Semester</td>
+                            <td>{{journal.semester}}</td>
+                        </tr>
+                        <tr>
+                            <td>Golongan</td>
+                            <td>{{journal.golongan}}</td>
+                        </tr>
+                        <td>Mata Kuliah</td>
+                        <td>{{journal.matkul.nama}}</td>
+                        <tr>
+                            <td>Minggu ke-</td>
+                            <td>{{journal.minggu}}</td>
+                        </tr>
+                        <td>Tanggal</td>
+                        <td>{{journal.tanggal_perkuliahan}}</td>
+                        <tr>
+                            <td>Topik</td>
+                            <td>{{journal.topik}}</td>
+                        </tr>
+                        <tr>
+                        <td>Learning Journal</td>
+                        <td>{{journal.pembahasan}}</td>
+                        </tr>
+                        <tr>
+                        <td>Cleaning</td>
+                        <td>{{journal.cleaning}}</td>
+                        </tr>
+                        <tr>
+                        <td>Casefolding</td>
+                        <td>{{journal.casefolding}}</td>
+                        </tr>
+                        <tr>
+                        <td>Tokenizing</td>
+                        <td>{{journal.tokenizing}}</td>
+                        </tr>
+                        <tr>
+                        <td>Normalisasi</td>
+                        <td>{{journal.normalisasi}}</td>
+                        </tr>
+                        <tr>
+                        <td>Stopword</td>
+                        <td>{{journal.stopword}}</td>
+                        </tr>
+                        <tr>
+                        <td>Steeming</td>
+                        <td>{{journal.steeming}}</td>
+                        </tr>
+                        <tr>
+                        <td>Cleaned</td>
+                        <td>{{journal.cleaned}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="d-grid gap-5 d-md-flex justify-content-md-end">
+                    <a href="#" class="btn btn-dark btn-flat">Kembali</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+{% endblock content %}

@@ -85,7 +85,8 @@
                     <p>Petunjuk</p> -->
             <div class="row">
               <div class="col-md-12 mx-0">
-                <form id="msform">
+                <form id="msform" method="post" action="">
+                  {% csrf_token %}
                   <!-- progressbar -->
                   <ul id="progressbar">
                     <li class="active" id="account">
@@ -119,7 +120,7 @@
                       />
                       <label for="">Golongan</label>
                       <div>
-                        <select class="form-control" name="gol" id="gol">
+                        <select class="form-control" name="golongan" id="gol">
                           <option value="" selected disabled>
                             Pilih Golongan
                           </option>
@@ -165,69 +166,31 @@
                       <h2 class="fs-title">Mata Kuliah</h2>
                       <br />
                       <label for="">Mata Kuliah</label>
+                      {% for item in matkul %}
                       <div class="col-sm-12">
                         <div class="form-group">
                           <div class="form-check">
                             <input
                               class="form-check-input"
                               type="radio"
-                              name="exampleRadios"
-                              id="exampleRadios1"
-                              value="option1"
+                              name="matkul"
+                              id="matkulid"
+                              value="{{item.id}}"
                             />
-                            <label
-                              class="form-check-label"
-                              for="exampleRadios1"
-                            >
-                              Workshop Pengembangan Perangkat Lunak
+                            <label class="form-check-label" for="matkulid">
+                              {{item.nama}}
                             </label>
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="exampleRadios"
-                              id="exampleRadios1"
-                              value="option1"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="exampleRadios1"
-                            >
-                              Workshop Pengembangan Perangkat Lunak
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="exampleRadios"
-                              id="exampleRadios1"
-                              value="option1"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="exampleRadios1"
-                            >
-                              Workshop Pengembangan Perangkat Lunak
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+                      {% endfor %}
+
                       <label for="">Minggu ke-</label>
                       <div>
                         <select
                           class="form-control"
-                          name="semester"
-                          id="semester"
+                          name="minggu"
+                          id="minggu"
                         >
                           <option value="" selected disabled>
                             Pilih Pertemuan
@@ -271,6 +234,7 @@
                       <textarea
                         style="border: 1px solid; border-color: #d3d3d3"
                         rows="10"
+                        name="pembahasan"
                         placeholder="Masukkan Learning Journal"
                       ></textarea>
                     </div>
@@ -280,12 +244,14 @@
                       class="previous action-button-previous"
                       value="Previous"
                     />
-                    <input
-                      type="button"
-                      name="next"
-                      class="next action-button"
-                      value="Next Step"
-                    />
+                    <button
+                      type="submit"
+                      name="submit"
+                      class="action-button"
+                      value="Submit"
+                    >
+                      Submit
+                    </button>
                   </fieldset>
                   <fieldset>
                     <div class="form-card">

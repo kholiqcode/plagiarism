@@ -101,6 +101,13 @@ class LearningJurnal(models.Model):
     tanggal_perkuliahan = models.DateField(null=True)
     topik = models.CharField(max_length=255,null=True)
     pembahasan = models.TextField(null=True)
+    cleaning = models.TextField(null=True)
+    casefolding = models.TextField(null=True)
+    tokenizing = models.TextField(null=True)
+    normalisasi = models.TextField(null=True)
+    stopword = models.TextField(null=True)
+    steeming = models.TextField(null=True)
+    cleaned = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     class Meta:
