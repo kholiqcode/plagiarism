@@ -39,7 +39,7 @@ class PreProcessing():
     
     # Stopword 
     def _stopword(self,tweet):
-        _tweet = [w for w in str(tweet).split() if not w in self.stopwords]
+        _tweet = [w for w in tweet if not w in self.stopwords]
         return _tweet
 
     # Normalisasi (Ubah kata alay atau typo)

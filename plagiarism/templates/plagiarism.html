@@ -142,11 +142,12 @@
                          </tr>
                      </thead>
                      <tbody>
+                         {% for item in plagiarism %}
                          <tr>
-                             <td>1</td>
-                             <td>E41180697</td>
-                             <td>E41180087</td>
-                             <td>70%</td>
+                             <td>{{ forloop.counter }}</td>
+                             <td>{{item.nim_q1}}</td>
+                             <td>{{item.nim_q2}}</td>
+                             <td>{{item.score}}%</td>
                              <td>
                                  <a href="" class="btn btn-success btn-icon-split" data-toggle="modal" data-target="#myModal">
                                      <span class="icon text-white-50">
@@ -156,21 +157,7 @@
                                  </a>
                              </td>
                          </tr>
-                         <tr>
-                             <td>2</td>
-                             <td>E41180617</td>
-                             <td>E41180124</td>
-                             <td>89%</td>
-                             <td>
-                                 <a href="/DetailDeteksi" class="btn btn-success btn-icon-split">
-                                     <span class="icon text-white-50">
-                                         <i class="fas fa-info-circle"></i>
-                                     </span>
-                                     <span class="text">Lihat Detail</span>
-                                 </a>
-                             </td>
-                         </tr>
-                         </tr>
+                         {% endfor %}
                      </tbody>
                  </table>
              </div>

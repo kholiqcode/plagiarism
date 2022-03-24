@@ -3,8 +3,20 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 import pandas as pd
 from core.preprocessing import PreProcessing
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 from plagiarism.models import LearningJurnal, MataKuliah, Semester
+
+def cosine_sklearn(docs):
+    # Initialize an instance of tf-idf Vectorizer
+    tfidf_vectorizer = TfidfVectorizer(norm=None)
+
+    # Generate the tf-idf vectors for the corpus
+    tfidf_matrix = tfidf_vectorizer.fit_transform(docs)
+    
+    cosine_sim = cosine_similarity(tfidf_matrix)
+    return cosine_sim[0]*100
 
 # Create your views here.
 def dashboard(request):
@@ -47,7 +59,48 @@ def matkul_delete(request,id):
     return redirect('matkul')
 
 def plagiarism(request):
-    return render(request, 'plagiarism.html')
+    journals = LearningJurnal.objects
+    if request.GET.get("semester") is not None:
+        semester = request.GET.get("semester")
+        journals=journals.filter(semester=semester)
+    
+    df = pd.DataFrame(list(journals.values()))
+    cosine = cosine_sklearn(df['cleaned'])
+    plagiarism_list = []
+    for i,v in df.iterrows():
+        # plagiarism_list[v['nim']] = []
+        for i2,v2 in df.iterrows():
+            exists = list(filter(lambda x: (x.get('nim_q1') == v['nim']) & (x.get('nim_q2') == v2['nim']) | (x.get('nim_q1') == v2['nim']) & (x.get('nim_q2') == v['nim']), plagiarism_list))
+            if len(exists) == 0 and v['nim'] != v2['nim']:
+                data = {
+                    'nim_q1':v['nim'],
+                    'nim_q2':v2['nim'],
+                    'score': round(cosine[i2],2)
+                }
+                plagiarism_list.append(data)
+    context= {
+            'plagiarism' : list(plagiarism_list)
+        }
+    return render(request, 'plagiarism.html',context)
+
+def test(request):
+    journals = LearningJurnal.objects.all()
+    df = pd.DataFrame(list(journals.values()))
+    cosine = cosine_sklearn(df['cleaned'])
+    plagiarism_list = []
+    for i,v in df.iterrows():
+        # plagiarism_list[v['nim']] = []
+        for i2,v2 in df.iterrows():
+            exists = list(filter(lambda x: (x.get('nim_q1') == v['nim']) or (x.get('nim_q2') == v2['nim']), plagiarism_list))
+            if len(exists) == 0:
+                data = {
+                    'nim_q1':v['nim'],
+                    'nim_q2':v2['nim'],
+                    'score': cosine[i2]
+                }
+                plagiarism_list.append(data)
+    
+    return HttpResponse(plagiarism_list)
 
 def form_mahasiswa(request):
     if request.method == "GET":

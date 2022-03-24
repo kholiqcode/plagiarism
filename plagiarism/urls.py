@@ -1,6 +1,6 @@
 from django.urls import path
 
-from plagiarism.views import dashboard, detail_journal, form_mahasiswa, learning_journal, matkul, matkul_delete, plagiarism
+from plagiarism.views import dashboard, detail_journal, form_mahasiswa, learning_journal, matkul, matkul_delete, plagiarism, test
 
 
 urlpatterns = [
@@ -11,4 +11,5 @@ urlpatterns = [
     path('matkul/delete/<str:id>', matkul_delete, name="matkul_delete"),
     path('plagiarism', plagiarism, name="plagiarism"),
     path('form-mahasiswa', form_mahasiswa, name="form_mahasiswa"),
+    path('test', test, name="test"),
 ]
