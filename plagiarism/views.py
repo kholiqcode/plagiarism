@@ -5,6 +5,7 @@ import pandas as pd
 from core.preprocessing import PreProcessing
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from django.db.models import Count
 
 from plagiarism.models import LearningJurnal, MataKuliah, Semester
 
@@ -16,11 +17,16 @@ def cosine_sklearn(docs):
     tfidf_matrix = tfidf_vectorizer.fit_transform(docs)
     
     cosine_sim = cosine_similarity(tfidf_matrix)
-    return cosine_sim[0]*100
+    return cosine_sim*100
 
 # Create your views here.
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    context = {
+        'total_journal':LearningJurnal.objects.count(),
+        'total_mahasiswa':LearningJurnal.objects.values('nim').annotate(count_nim=Count('nim')).count(),
+        'total_matkul':MataKuliah.objects.count(),
+    }
+    return render(request, 'dashboard.html',context)
 
 def learning_journal(request):
     if request.method == "GET":
@@ -75,7 +81,7 @@ def plagiarism(request):
                 data = {
                     'nim_q1':v['nim'],
                     'nim_q2':v2['nim'],
-                    'score': round(cosine[i2],2)
+                    'score': round(cosine[i][i2],2)
                 }
                 plagiarism_list.append(data)
     context= {
@@ -100,7 +106,7 @@ def test(request):
                 }
                 plagiarism_list.append(data)
     
-    return HttpResponse(plagiarism_list)
+    return HttpResponse(cosine)
 
 def form_mahasiswa(request):
     if request.method == "GET":
